@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v2  # Installiert die benötigte Java-Version
         with:
           java-version: '17'  # Geben Sie die Java-Version hier an
-          distribution: 'adoptopenjdk'  # Geben Sie die Java-Distribution an
+          distribution: 'temurin'  # Geben Sie die Temurin-Distribution an
 
       - name: Build Fabric Mod
         run: ./gradlew build  # Baut den Mod
