@@ -3,7 +3,7 @@ name: Build Fabric Mod
 on:
   push:
     branches:
-      - master  # Der Workflow wird ausgelöst, wenn Sie auf den 'master' Branch pushen
+      - master  # Der Workflow wird bei einem Push zum master-Branch ausgeführt
 
 jobs:
   build:
@@ -11,13 +11,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2  # Dieser Schritt holt den Code aus dem Repository
+        uses: actions/checkout@v2  # Holt den Code aus dem Repository
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v2  # Installiert die benötigte Java-Version
+        uses: actions/setup-java@v2
         with:
-          java-version: '17'  # Geben Sie die Java-Version hier an
-          distribution: 'temurin'  # Geben Sie die Temurin-Distribution an
+          java-version: '17'
+          distribution: 'temurin'  # Verwenden Sie Temurin für JDK
 
       - name: Build Fabric Mod
-        run: ./gradlew build  # Baut den Mod
+        run: ./gradlew build  # Verwenden Sie gradlew zum Build
